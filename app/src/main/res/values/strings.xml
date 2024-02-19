@@ -6,4 +6,17 @@
     <string name="create_account">Create an account</string>
     <string name="have_an_account">I already have an account</string>
     <string name="webant_logo">Webant logo</string>
+    <string name="user_name_req">User Name <font color='#CF497E'>*</font></string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="birthday">Birthday</string>
+    <string name="phone_number_req">Phone number <font color='#CF497E'>*</font></string>
+    <string name="email_req">Email <font color='#CF497E'>*</font></string>
+    <string name="password_req">Password <font color='#CF497E'>*</font></string>
+    <string name="confirm_password_req">Confirm password <font color='#CF497E'>*</font></string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_up_header">Sign Up</string>
+    <string name="sign_in_header">Sign In</string>
+    <string name="cancel">Cancel</string>
 </resources>
