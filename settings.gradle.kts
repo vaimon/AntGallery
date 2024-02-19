@@ -15,4 +15,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "AntGallery"
 include(":app")
- 
+include(":data")
+include(":domain")
