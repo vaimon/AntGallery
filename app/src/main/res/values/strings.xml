@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AntGallery</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_message">Welcome to Gallery!</string>
+    <string name="create_account">Create an account</string>
+    <string name="have_an_account">I already have an account</string>
+    <string name="webant_logo">Webant logo</string>
 </resources>

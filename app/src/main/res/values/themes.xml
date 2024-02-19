@@ -9,6 +9,10 @@
         <item name="colorSecondaryContainer">@color/secondary</item>
         <item name="colorOnSecondary">@color/white</item>
 
+        <item name="colorTertiary">@color/black</item>
+        <item name="colorTertiaryContainer">@color/black</item>
+        <item name="colorOnTertiary">@color/white</item>
+
         <item name="colorError">@color/errorRed</item>
         <item name="colorOnError">@color/white</item>
 
@@ -21,7 +25,54 @@
 
         <item name="android:colorBackground">@color/white</item>
         <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/black</item>
     </style>
 
-    <style name="Theme.AntGallery" parent="Base.Theme.AntGallery" />
+    <style name="Theme.AntGallery" parent="Base.Theme.AntGallery">
+        <item name="android:statusBarColor">?android:attr/colorBackground</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="Theme.RickAndMortyWiki.Splash" parent="Theme.SplashScreen">
+        <item name="postSplashScreenTheme">@style/Theme.AntGallery</item>
+        <item name="android:windowSplashscreenContent">@drawable/background_logo</item>
+    </style>
+
+    <style name="Theme.AntGallery.Text.Header" parent="Widget.MaterialComponents.TextView">
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:textColor">?attr/colorTertiary</item>
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <style name="Theme.AntGallery.Button" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:padding">10dp</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="elevation">0dp</item>
+        <item name="rippleColor">@android:color/transparent</item>
+    </style>
+
+    <style name="Theme.AntGallery.Button.Primary" parent="Theme.AntGallery.Button">
+        <item name="android:backgroundTint">@color/button_background</item>
+        <item name="android:textColor">@color/button_foreground</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+
+    <style name="Theme.AntGallery.Button.Secondary" parent="Theme.AntGallery.Button">
+        <item name="android:backgroundTint">?attr/colorSurface</item>
+        <item name="android:textColor">@color/button_outline_foreground</item>
+        <item name="strokeColor">@color/button_background</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <style name="Theme.AntGallery.Button.Tertiary" parent="Theme.AntGallery.Button">
+        <item name="android:backgroundTint">?attr/colorSurface</item>
+        <item name="android:textColor">@color/button_outline_foreground</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
 </resources>
