@@ -2,9 +2,10 @@ package me.vaimon.antgallery.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import me.vaimon.antgallery.R
+import dagger.hilt.android.AndroidEntryPoint
 import me.vaimon.antgallery.databinding.ActivityMainBinding
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -52,9 +52,10 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.core:core-splashscreen:1.0.1")
 
-    val lifecycleVersion = "2.7.0"
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
+    val moxyVersion = "2.2.2"
+    implementation("com.github.moxy-community:moxy-androidx:$moxyVersion")
+    implementation("com.github.moxy-community:moxy-ktx:$moxyVersion")
+    kapt("com.github.moxy-community:moxy-compiler:$moxyVersion")
 
     val nav_version = "2.7.7"
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
