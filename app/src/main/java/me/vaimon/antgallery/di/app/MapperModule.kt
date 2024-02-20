@@ -5,8 +5,10 @@ import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import me.vaimon.antgallery.data.mapper.Mapper
+import me.vaimon.antgallery.domain.entity.LoginCredentialsEntity
 import me.vaimon.antgallery.domain.entity.UserEntity
 import me.vaimon.antgallery.mapper.UserAppDomainMapper
+import me.vaimon.antgallery.mapper.UserCredentialsMapper
 import me.vaimon.antgallery.models.User
 
 @Module
@@ -17,4 +19,9 @@ abstract class MapperModule {
     abstract fun provideUserAppDomainMapper(
         userAppDomainMapper: UserAppDomainMapper
     ): Mapper<User, UserEntity>
+
+    @Binds
+    abstract fun provideUserCredentialsMapper(
+        userCredentialsMapper: UserCredentialsMapper
+    ): Mapper<User, LoginCredentialsEntity>
 }

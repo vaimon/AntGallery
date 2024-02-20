@@ -10,20 +10,16 @@ import androidx.core.widget.doOnTextChanged
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.datepicker.MaterialDatePicker
-import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import me.vaimon.antgallery.R
+import me.vaimon.antgallery.data.utils.AuthorizationException
 import me.vaimon.antgallery.databinding.FragmentAuthorizationBinding
 import moxy.MvpAppCompatFragment
-import moxy.ktx.moxyPresenter
 import moxy.presenter.InjectPresenter
 import moxy.presenter.ProvidePresenter
-import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
-import java.util.Locale
 import javax.inject.Inject
-import javax.inject.Provider
 
 
 @AndroidEntryPoint
@@ -72,7 +68,7 @@ class AuthorizationFragment : MvpAppCompatFragment(), AuthorizationView {
         }
     }
 
-    private fun setupToolbar(){
+    private fun setupToolbar() {
         binding.btnNavigateUp.setOnClickListener {
             presenter.onNavigateUp()
         }
@@ -96,11 +92,11 @@ class AuthorizationFragment : MvpAppCompatFragment(), AuthorizationView {
         }
     }
 
-    private fun showToast(resId: Int){
+    private fun showToast(resId: Int) {
         Toast.makeText(context, getString(resId), Toast.LENGTH_SHORT).show()
     }
 
-    override fun openDatePicker(){
+    override fun openDatePicker() {
         val picker = MaterialDatePicker.Builder.datePicker().apply {
             setTitleText(R.string.select_birthday)
         }.build()
@@ -111,49 +107,51 @@ class AuthorizationFragment : MvpAppCompatFragment(), AuthorizationView {
     }
 
     override fun updateDate(date: LocalDate?) {
-        binding.etBirthday.setText(date?.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))
-         ?: "")
+        binding.etBirthday.setText(
+            date?.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))
+                ?: ""
+        )
     }
 
     override fun toggleUserNameError(shouldShow: Boolean) {
         binding.tilUsername.apply {
             isErrorEnabled = shouldShow
-            error = if(shouldShow) getString(R.string.error_username) else null
+            error = if (shouldShow) getString(R.string.error_username) else null
         }
     }
 
     override fun toggleBirthDayError(shouldShow: Boolean) {
         binding.tilBirthday.apply {
             isErrorEnabled = shouldShow
-            error = if(shouldShow) getString(R.string.error_birthday) else null
+            error = if (shouldShow) getString(R.string.error_birthday) else null
         }
     }
 
     override fun togglePhoneError(shouldShow: Boolean) {
         binding.tilPhone.apply {
             isErrorEnabled = shouldShow
-            error = if(shouldShow) getString(R.string.error_phone) else null
+            error = if (shouldShow) getString(R.string.error_phone) else null
         }
     }
 
     override fun toggleEmailError(shouldShow: Boolean) {
         binding.tilEmail.apply {
             isErrorEnabled = shouldShow
-            error = if(shouldShow) getString(R.string.error_email) else null
+            error = if (shouldShow) getString(R.string.error_email) else null
         }
     }
 
     override fun togglePasswordError(shouldShow: Boolean) {
         binding.tilPassword.apply {
             isErrorEnabled = shouldShow
-            error = if(shouldShow) getString(R.string.error_password) else null
+            error = if (shouldShow) getString(R.string.error_password) else null
         }
     }
 
     override fun togglePasswordConfirmationError(shouldShow: Boolean) {
         binding.tilConfirmPassword.apply {
             isErrorEnabled = shouldShow
-            error = if(shouldShow) getString(R.string.error_password_confirmation) else null
+            error = if (shouldShow) getString(R.string.error_password_confirmation) else null
         }
     }
 
@@ -162,11 +160,17 @@ class AuthorizationFragment : MvpAppCompatFragment(), AuthorizationView {
     }
 
     override fun navigateToMain() {
-       showToast(R.string.app_name)
+        showToast(R.string.app_name)
     }
 
-    override fun showExistingUserError() {
-        showToast(R.string.error_user_exists)
+    override fun showAuthorizationError(e: AuthorizationException) {
+        showToast(
+            when (e) {
+                is AuthorizationException.InvalidPassword -> R.string.error_wrong_password
+                is AuthorizationException.UserAlreadyExists -> R.string.error_user_exists
+                is AuthorizationException.UserNotFound -> R.string.error_user_does_not_exist
+            }
+        )
     }
 
     override fun showUnknownError() {
@@ -182,7 +186,7 @@ class AuthorizationFragment : MvpAppCompatFragment(), AuthorizationView {
             binding.tvHeader.text = getString(R.string.sign_in_header)
             binding.tilEmail.hint = getText(R.string.email)
             binding.tilPassword.hint = getText(R.string.password)
-        } else{
+        } else {
             binding.btnAct.text = getString(R.string.sign_up)
             binding.btnChangeMode.text = getString(R.string.sign_in)
             binding.tvHeader.text = getString(R.string.sign_up_header)

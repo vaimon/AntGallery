@@ -1,11 +1,10 @@
 package me.vaimon.antgallery.ui.authorization
 
-import me.vaimon.antgallery.utils.AppConstants
+import me.vaimon.antgallery.data.utils.AuthorizationException
 import moxy.MvpView
 import moxy.viewstate.strategy.alias.AddToEndSingle
 import moxy.viewstate.strategy.alias.OneExecution
 import java.time.LocalDate
-import java.util.Date
 
 interface AuthorizationView: MvpView {
     @AddToEndSingle
@@ -33,7 +32,7 @@ interface AuthorizationView: MvpView {
     @OneExecution
     fun navigateToMain()
     @OneExecution
-    fun showExistingUserError()
+    fun showAuthorizationError(e: AuthorizationException)
     @OneExecution
     fun showUnknownError()
 }
