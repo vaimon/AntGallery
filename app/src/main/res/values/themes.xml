@@ -46,6 +46,12 @@
         <item name="android:textSize">32sp</item>
     </style>
 
+    <style name="Theme.AntGallery.Text.ToolbarTip" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:layout_marginHorizontal">8dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
     <style name="Theme.AntGallery.Text.Editable.Layout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="hintTextColor">@color/gray</item>
         <item name="hintAnimationEnabled">true</item>
@@ -59,6 +65,8 @@
         <item name="endIconTint">?attr/colorOutline</item>
         <item name="android:layout_marginVertical">10dp</item>
         <item name="endIconMode">custom</item>
+        <item name="errorIconDrawable">@drawable/icon_warning</item>
+        <item name="errorIconTint">@color/errorRed</item>
         <item name="android:layout_marginHorizontal">32dp</item>
     </style>
 

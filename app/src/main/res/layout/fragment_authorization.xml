@@ -34,9 +34,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/blue"
-                android:layout_marginHorizontal="8dp"
-                android:textSize="16sp"
+                style="@style/Theme.AntGallery.Text.ToolbarTip"
                 android:text="@string/cancel"/>
         </LinearLayout>
 
@@ -106,7 +104,8 @@
             style="@style/Theme.AntGallery.Text.Editable.EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="date" />
+            android:focusable="false"
+            android:inputType="none" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -166,7 +165,7 @@
             style="@style/Theme.AntGallery.Text.Editable.EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" />
+            android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -226,6 +225,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:constraint_referenced_ids="tilUsername, tilBirthday, tilPhone, tilConfirmPassword"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

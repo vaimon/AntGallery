@@ -19,4 +19,12 @@
     <string name="sign_up_header">Sign Up</string>
     <string name="sign_in_header">Sign In</string>
     <string name="cancel">Cancel</string>
+    <string name="select_birthday">Select your birthday date</string>
+    <string name="error_username">User name contains invalid characters</string>
+    <string name="error_birthday">Birth day must be in the past!</string>
+    <string name="error_phone">Invalid phone format</string>
+    <string name="error_email">Invalid email format</string>
+    <string name="error_password">Password must contain at least 6 symbols</string>
+    <string name="error_password_confirmation">Passwords do not match</string>
+    <string name="warning_input">Make sure your input is valid and all required fields are filled</string>
 </resources>
