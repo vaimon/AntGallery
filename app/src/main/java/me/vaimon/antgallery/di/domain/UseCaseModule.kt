@@ -4,6 +4,8 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import me.vaimon.antgallery.domain.repository.AuthorizationRepository
+import me.vaimon.antgallery.domain.usecase.UserSignUpUseCase
 import me.vaimon.antgallery.domain.usecase.validation.ValidateBirthDayUseCase
 import me.vaimon.antgallery.domain.usecase.validation.ValidateEmailUseCase
 import me.vaimon.antgallery.domain.usecase.validation.ValidatePasswordUseCase
@@ -37,5 +39,12 @@ class UseCaseModule {
     @Provides
     fun provideValidatePasswordUseCase(): ValidatePasswordUseCase{
         return ValidatePasswordUseCase()
+    }
+
+    @Provides
+    fun provideUserSignUpUseCase(
+        repository: AuthorizationRepository
+    ): UserSignUpUseCase{
+        return UserSignUpUseCase(repository)
     }
 }

@@ -96,6 +96,10 @@ class AuthorizationFragment : MvpAppCompatFragment(), AuthorizationView {
         }
     }
 
+    private fun showToast(resId: Int){
+        Toast.makeText(context, getString(resId), Toast.LENGTH_SHORT).show()
+    }
+
     override fun openDatePicker(){
         val picker = MaterialDatePicker.Builder.datePicker().apply {
             setTitleText(R.string.select_birthday)
@@ -154,7 +158,19 @@ class AuthorizationFragment : MvpAppCompatFragment(), AuthorizationView {
     }
 
     override fun showCompleteFieldsWarning() {
-        Toast.makeText(context, getString(R.string.warning_input), Toast.LENGTH_SHORT).show()
+        showToast(R.string.warning_input)
+    }
+
+    override fun navigateToMain() {
+       showToast(R.string.app_name)
+    }
+
+    override fun showExistingUserError() {
+        showToast(R.string.error_user_exists)
+    }
+
+    override fun showUnknownError() {
+        showToast(R.string.error_unknown)
     }
 
     override fun updateUiType(isSignInMode: Boolean) {

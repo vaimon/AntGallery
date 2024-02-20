@@ -8,10 +8,8 @@ import java.time.LocalDate
 import java.util.Date
 
 interface AuthorizationView: MvpView {
-
     @AddToEndSingle
     fun updateUiType(isSignInMode: Boolean)
-
     @OneExecution
     fun onNavigateUp()
     @OneExecution
@@ -32,4 +30,10 @@ interface AuthorizationView: MvpView {
     fun togglePasswordConfirmationError(shouldShow: Boolean)
     @OneExecution
     fun showCompleteFieldsWarning()
+    @OneExecution
+    fun navigateToMain()
+    @OneExecution
+    fun showExistingUserError()
+    @OneExecution
+    fun showUnknownError()
 }

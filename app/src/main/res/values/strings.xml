@@ -27,4 +27,6 @@
     <string name="error_password">Password must contain at least 6 symbols</string>
     <string name="error_password_confirmation">Passwords do not match</string>
     <string name="warning_input">Make sure your input is valid and all required fields are filled</string>
+    <string name="error_user_exists">A user with this email already exists</string>
+    <string name="error_unknown">Unknown error. Try again later</string>
 </resources>
