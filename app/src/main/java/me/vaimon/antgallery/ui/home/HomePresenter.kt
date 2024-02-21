@@ -1,10 +1,7 @@
-package me.vaimon.antgallery.ui.main
+package me.vaimon.antgallery.ui.home
 
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import me.vaimon.antgallery.domain.usecase.GetLoggedUserIdUseCase
 import moxy.MvpPresenter
-import moxy.presenterScope
 import javax.inject.Inject
 
 class HomePresenter @Inject constructor(

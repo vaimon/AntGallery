@@ -111,4 +111,14 @@
         <item name="android:textColor">@color/button_outline_foreground</item>
         <item name="strokeWidth">0dp</item>
     </style>
+
+    <!-- NavBar -->
+    <style name="Theme.AntGallery.NavBar" parent="Widget.Design.BottomNavigationView">
+        <item name ="itemIconTint">@color/icon_foreground</item>
+        <item name ="android:background">@drawable/background_bottom_navigation</item>
+        <item name ="elevation">0dp</item>
+<!--        <item name ="itemActiveIndicatorStyle">?attr/colorPrimary</item>-->
+        <item name ="labelVisibilityMode">unlabeled</item>
+        <item name ="itemIconSize">26dp</item>
+    </style>
 </resources>

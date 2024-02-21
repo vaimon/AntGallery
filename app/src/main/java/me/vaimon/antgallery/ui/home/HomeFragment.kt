@@ -1,10 +1,12 @@
-package me.vaimon.antgallery.ui.main
+package me.vaimon.antgallery.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
 import dagger.hilt.android.AndroidEntryPoint
 import me.vaimon.antgallery.R
 import me.vaimon.antgallery.databinding.FragmentHomeBinding
@@ -37,6 +39,12 @@ class HomeFragment : MvpAppCompatFragment(), HomeView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         presenter.checkAuthStatus()
+        setupNavigation()
+    }
+
+    private fun setupNavigation(){
+        val navHostFragment = childFragmentManager.findFragmentById(R.id.fragNavHost) as NavHostFragment
+        binding.bottomNavigation.setupWithNavController(navHostFragment.navController)
     }
 
     override fun navigateToWelcomeScreen() {

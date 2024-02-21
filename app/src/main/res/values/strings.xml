@@ -31,4 +31,7 @@
     <string name="error_user_does_not_exist">A user with this email does not exist</string>
     <string name="error_wrong_password">Wrong password</string>
     <string name="error_unknown">Unknown error. Try again later</string>
+    <string name="page_view_desc">View pictures</string>
+    <string name="page_add_desc">Add picture</string>
+    <string name="page_profile_desc">Profile</string>
 </resources>
