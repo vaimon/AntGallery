@@ -46,6 +46,12 @@
         <item name="android:textSize">32sp</item>
     </style>
 
+    <style name="Theme.AntGallery.Text.TabHeader" parent="Widget.MaterialComponents.TextView">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">?attr/colorTertiary</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
     <style name="Theme.AntGallery.Text.ToolbarTip" parent="Widget.MaterialComponents.TextView">
         <item name="android:textColor">@color/blue</item>
         <item name="android:layout_marginHorizontal">8dp</item>
@@ -117,8 +123,33 @@
         <item name ="itemIconTint">@color/icon_foreground</item>
         <item name ="android:background">@drawable/background_bottom_navigation</item>
         <item name ="elevation">0dp</item>
-<!--        <item name ="itemActiveIndicatorStyle">?attr/colorPrimary</item>-->
         <item name ="labelVisibilityMode">unlabeled</item>
         <item name ="itemIconSize">26dp</item>
+    </style>
+
+    <!-- Searchbar -->
+    <style name="Theme.AntGallery.SearchView" parent="Widget.AppCompat.SearchView">
+        <item name="android:background">@drawable/background_searchbar</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="iconifiedByDefault">false</item>
+        <item name="searchIcon">@drawable/icon_search</item>
+        <item name="android:paddingStart">-10dp</item>
+        <item name="android:paddingEnd">-10dp</item>
+        <item name="queryBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="Theme.AntGallery.Cursor" parent="Theme.AntGallery">
+        <item name="colorControlActivated">@color/black</item>
+    </style>
+
+    <style name="Theme.AntGallery.TabLayout" parent="Widget.MaterialComponents.TabLayout">
+        <item name="tabIndicatorFullWidth">true</item>
+        <item name="tabTextColor">@color/gray</item>
+        <item name="tabMode">fixed</item>
+        <item name="tabSelectedTextColor">@color/black</item>
+        <item name="tabRippleColor">@android:color/transparent</item>
+        <item name="tabBackground">@drawable/background_tab</item>
+        <item name="tabTextAppearance">@style/Theme.AntGallery.Text.TabHeader</item>
     </style>
 </resources>

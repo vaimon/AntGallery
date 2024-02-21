@@ -34,4 +34,7 @@
     <string name="page_view_desc">View pictures</string>
     <string name="page_add_desc">Add picture</string>
     <string name="page_profile_desc">Profile</string>
+    <string name="search">Search</string>
+    <string name="tab_new">New</string>
+    <string name="tab_popular">Popular</string>
 </resources>

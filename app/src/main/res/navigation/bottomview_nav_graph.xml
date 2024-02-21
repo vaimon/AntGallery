@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/pictureViewerFragment"
-        android:name="me.vaimon.antgallery.ui.home.nested_ui.PictureViewerFragment"
+        android:name="me.vaimon.antgallery.ui.home.nested_ui.picture_viewer.PictureViewerFragment"
         android:label="fragment_picture_viewer"
         tools:layout="@layout/fragment_picture_viewer" />
     <fragment
