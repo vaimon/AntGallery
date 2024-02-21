@@ -40,6 +40,21 @@
 
     </com.google.android.material.appbar.MaterialToolbar>
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/contentGuidelineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_begin="32dp"
+        android:orientation="vertical"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/contentGuidelineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_end="32dp"
+        android:orientation="vertical"
+        />
+
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvHeader"
         style="@style/Theme.AntGallery.Text.Header"
@@ -74,8 +89,8 @@
         app:endIconDrawable="@drawable/icon_person"
         app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintBottom_toTopOf="@id/tilBirthday"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/contentGuidelineEnd"
+        app:layout_constraintStart_toEndOf="@id/contentGuidelineStart"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -94,8 +109,8 @@
         android:layout_height="wrap_content"
         android:hint="@string/birthday"
         app:endIconDrawable="@drawable/icon_date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/contentGuidelineEnd"
+        app:layout_constraintStart_toEndOf="@id/contentGuidelineStart"
         app:layout_constraintBottom_toTopOf="@id/tilPhone"
         app:layout_constraintTop_toBottomOf="@+id/tilUsername">
 
@@ -115,8 +130,8 @@
         android:layout_height="wrap_content"
         android:hint="@string/phone_number_req"
         app:endIconDrawable="@drawable/icon_phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/contentGuidelineEnd"
+        app:layout_constraintStart_toEndOf="@id/contentGuidelineStart"
         app:layout_constraintTop_toBottomOf="@+id/tilBirthday"
         app:layout_constraintBottom_toTopOf="@id/tilEmail">
 
@@ -135,8 +150,8 @@
         android:layout_height="wrap_content"
         android:hint="@string/email_req"
         app:endIconDrawable="@drawable/icon_mail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/contentGuidelineEnd"
+        app:layout_constraintStart_toEndOf="@id/contentGuidelineStart"
         app:layout_constraintTop_toBottomOf="@+id/tilPhone"
         app:layout_constraintBottom_toTopOf="@id/tilPassword">
 
@@ -155,8 +170,8 @@
         android:layout_height="wrap_content"
         android:hint="@string/password_req"
         app:endIconDrawable="@drawable/selector_show_password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/contentGuidelineEnd"
+        app:layout_constraintStart_toEndOf="@id/contentGuidelineStart"
         app:layout_constraintTop_toBottomOf="@+id/tilEmail"
         app:layout_constraintBottom_toTopOf="@id/tilConfirmPassword">
 
@@ -176,8 +191,8 @@
         android:hint="@string/confirm_password_req"
         app:endIconDrawable="@drawable/selector_show_password"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/contentGuidelineEnd"
+        app:layout_constraintStart_toEndOf="@id/contentGuidelineStart"
         app:layout_constraintTop_toBottomOf="@+id/tilPassword">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -225,11 +240,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:constraint_referenced_ids="tilUsername, tilBirthday, tilPhone, tilConfirmPassword"
-        />
-    <androidx.constraintlayout.widget.Guideline
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
