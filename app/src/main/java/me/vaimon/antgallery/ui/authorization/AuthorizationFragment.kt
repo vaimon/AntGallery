@@ -160,7 +160,7 @@ class AuthorizationFragment : MvpAppCompatFragment(), AuthorizationView {
     }
 
     override fun navigateToMain() {
-        showToast(R.string.app_name)
+        findNavController().navigate(R.id.action_auth_to_home)
     }
 
     override fun showAuthorizationError(e: AuthorizationException) {

@@ -4,6 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import me.vaimon.antgallery.data.datasource.SharedPreferencesDataSource
 import me.vaimon.antgallery.data.db.AppDatabase
 import me.vaimon.antgallery.data.mapper.Mapper
 import me.vaimon.antgallery.data.models.UserData
@@ -18,11 +19,13 @@ class RepositoryModule {
     @Provides
     fun provideCharacterRepository(
         db: AppDatabase,
-        userDomainDataMapper: Mapper<UserEntity, UserData>
+        userDomainDataMapper: Mapper<UserEntity, UserData>,
+        sharedPreferencesDataSource: SharedPreferencesDataSource
     ): AuthorizationRepository {
         return AuthorizationRepositoryImpl(
             db,
-            userDomainDataMapper
+            userDomainDataMapper,
+            sharedPreferencesDataSource
         )
     }
 }

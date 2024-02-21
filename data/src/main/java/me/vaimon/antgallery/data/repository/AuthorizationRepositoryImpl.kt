@@ -2,6 +2,7 @@ package me.vaimon.antgallery.data.repository
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import me.vaimon.antgallery.data.datasource.SharedPreferencesDataSource
 import me.vaimon.antgallery.data.db.AppDatabase
 import me.vaimon.antgallery.data.mapper.Mapper
 import me.vaimon.antgallery.data.models.UserData
@@ -13,7 +14,8 @@ import javax.inject.Inject
 
 class AuthorizationRepositoryImpl @Inject constructor(
     private val db: AppDatabase,
-    private val userDomainDataMapper: Mapper<UserEntity, UserData>
+    private val userDomainDataMapper: Mapper<UserEntity, UserData>,
+    private val sharedPrefsDataSource: SharedPreferencesDataSource
 ): AuthorizationRepository {
     override suspend fun signUp(user: UserEntity) = withContext(Dispatchers.IO) {
         if(db.userDao().getUserByEmail(user.email) != null){
@@ -28,6 +30,9 @@ class AuthorizationRepositoryImpl @Inject constructor(
         if(user.password != credentials.password){
             throw AuthorizationException.InvalidPassword()
         }
+        sharedPrefsDataSource.setLoggedUserId(user.id)
         return user.id
     }
+
+    override fun getLoggedUserId(): Int? = sharedPrefsDataSource.getLoggedUserId()
 }

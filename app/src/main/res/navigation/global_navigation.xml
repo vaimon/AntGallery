@@ -3,28 +3,51 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/global_navigation"
-    app:startDestination="@id/welcomeFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/welcomeFragment"
-        android:name="me.vaimon.antgallery.ui.welcome.WelcomeFragment"
-        android:label="fragment_welcome"
-        tools:layout="@layout/fragment_welcome" >
+        android:id="@+id/homeFragment"
+        android:name="me.vaimon.antgallery.ui.main.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_welcome_to_authorization"
-            app:destination="@id/authorizationFragment"
+            android:id="@+id/action_home_to_auth"
+            app:destination="@id/auth"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <navigation android:id="@+id/auth"
+        app:startDestination="@id/welcomeFragment">
+        <fragment
+            android:id="@+id/authorizationFragment"
+            android:name="me.vaimon.antgallery.ui.authorization.AuthorizationFragment"
+            android:label="fragment_authorization"
+            tools:layout="@layout/fragment_authorization">
+            <argument
+                android:name="authType"
+                app:argType="me.vaimon.antgallery.utils.AppConstants$AuthType" />
+        </fragment>
+        <fragment
+            android:id="@+id/welcomeFragment"
+            android:name="me.vaimon.antgallery.ui.welcome.WelcomeFragment"
+            android:label="fragment_welcome"
+            tools:layout="@layout/fragment_welcome">
+            <action
+                android:id="@+id/action_welcome_to_authorization"
+                app:destination="@id/authorizationFragment"
+                app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim"
+                app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+                app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        </fragment>
+        <action
+            android:id="@+id/action_auth_to_home"
+            app:destination="@id/homeFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-    </fragment>
-    <fragment
-        android:id="@+id/authorizationFragment"
-        android:name="me.vaimon.antgallery.ui.authorization.AuthorizationFragment"
-        android:label="fragment_authorization"
-        tools:layout="@layout/fragment_authorization" >
-        <argument
-            android:name="authType"
-            app:argType="me.vaimon.antgallery.utils.AppConstants$AuthType" />
-    </fragment>
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="true" />
+    </navigation>
 </navigation>
