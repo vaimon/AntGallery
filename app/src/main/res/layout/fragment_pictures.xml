@@ -1,14 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.home.nested_ui.picture_viewer.fragments.PicturesFragment">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPictures"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        />
+
+    <LinearLayout
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:gravity="center"
-        android:text="Imagine there are some pictures" />
+        android:orientation="vertical"
+        >
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            style="@style/Theme.AntGallery.Progressbar"
+            android:layout_width="42dp"
+            android:layout_height="42dp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/Theme.AntGallery.Text.Label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/label_loading" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/errorBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/webant_error"
+            app:tint="@color/lightGray" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/Theme.AntGallery.Text.Label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/label_sorry" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/Theme.AntGallery.Text.Label.Description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/label_sorry_desc" />
+    </LinearLayout>
 
 </FrameLayout>

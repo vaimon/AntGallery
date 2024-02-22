@@ -37,4 +37,8 @@
     <string name="search">Search</string>
     <string name="tab_new">New</string>
     <string name="tab_popular">Popular</string>
+    <string name="label_loading">Loading...</string>
+    <string name="label_sorry">Sorry!</string>
+    <string name="label_sorry_desc">There are no pictures.\nPlease come back later.</string>
+    <string name="desc_grid_item">Grid item</string>
 </resources>

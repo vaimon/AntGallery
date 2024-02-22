@@ -8,9 +8,11 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayoutMediator
 import me.vaimon.antgallery.R
 import me.vaimon.antgallery.databinding.FragmentPictureViewerBinding
+import me.vaimon.antgallery.models.Picture
 import me.vaimon.antgallery.ui.home.nested_ui.picture_viewer.adapters.PictureViewerTabAdapter
+import moxy.MvpAppCompatFragment
 
-class PictureViewerFragment : Fragment() {
+class PictureViewerFragment : MvpAppCompatFragment(), PictureViewerView {
     private lateinit var binding: FragmentPictureViewerBinding
 
     private var tabAdapter: PictureViewerTabAdapter? = null

@@ -11,8 +11,8 @@
         android:id="@+id/ivLogo"
         android:layout_width="128dp"
         android:layout_height="128dp"
-        android:src="@drawable/webant_logo"
-        android:contentDescription="@string/webant_logo" />
+        android:contentDescription="@string/webant_logo"
+        android:src="@drawable/webant_logo" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvTitle"

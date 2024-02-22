@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.authorization.AuthorizationFragment"
     android:animateLayoutChanges="true"
-    >
+    tools:context=".ui.authorization.AuthorizationFragment">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
@@ -14,28 +13,29 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        >
+        app:layout_constraintTop_toTopOf="parent">
+
         <LinearLayout
             android:id="@+id/btnNavigateUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:focusable="true"
-            android:clickable="true"
             android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
             android:gravity="center_vertical">
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:importantForAccessibility="no"
                 android:src="@drawable/icon_left_arrow"
-                app:tint="@color/blue"
-                android:importantForAccessibility="no" />
+                app:tint="@color/blue" />
 
             <com.google.android.material.textview.MaterialTextView
+                style="@style/Theme.AntGallery.Text.ToolbarTip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/Theme.AntGallery.Text.ToolbarTip"
-                android:text="@string/cancel"/>
+                android:text="@string/cancel" />
         </LinearLayout>
 
     </com.google.android.material.appbar.MaterialToolbar>
@@ -44,16 +44,15 @@
         android:id="@+id/contentGuidelineStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_begin="32dp"
         android:orientation="vertical"
-        />
+        app:layout_constraintGuide_begin="32dp" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/contentGuidelineEnd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_end="32dp"
         android:orientation="vertical"
-        />
+        app:layout_constraintGuide_end="32dp" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvHeader"
@@ -64,42 +63,39 @@
         app:layout_constraintBottom_toTopOf="@+id/barrierEditTexts"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        />
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <com.google.android.material.divider.MaterialDivider
         android:id="@+id/divider"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tvHeader"
-        app:layout_constraintEnd_toEndOf="@+id/tvHeader"
-        app:layout_constraintStart_toStartOf="@id/tvHeader"
         android:layout_marginTop="4dp"
         app:dividerColor="?attr/colorPrimary"
         app:dividerThickness="2dp"
-        />
+        app:layout_constraintEnd_toEndOf="@+id/tvHeader"
+        app:layout_constraintStart_toStartOf="@id/tvHeader"
+        app:layout_constraintTop_toBottomOf="@id/tvHeader" />
 
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilUsername"
+        style="@style/Theme.AntGallery.Text.Editable.Layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        style="@style/Theme.AntGallery.Text.Editable.Layout"
         android:hint="@string/user_name_req"
         app:endIconDrawable="@drawable/icon_person"
-        app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintBottom_toTopOf="@id/tilBirthday"
         app:layout_constraintEnd_toStartOf="@id/contentGuidelineEnd"
         app:layout_constraintStart_toEndOf="@id/contentGuidelineStart"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etUsername"
+            style="@style/Theme.AntGallery.Text.Editable.EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Theme.AntGallery.Text.Editable.EditText"
-            android:inputType="textPersonName"
-            />
+            android:inputType="textPersonName" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -109,9 +105,9 @@
         android:layout_height="wrap_content"
         android:hint="@string/birthday"
         app:endIconDrawable="@drawable/icon_date"
+        app:layout_constraintBottom_toTopOf="@id/tilPhone"
         app:layout_constraintEnd_toStartOf="@id/contentGuidelineEnd"
         app:layout_constraintStart_toEndOf="@id/contentGuidelineStart"
-        app:layout_constraintBottom_toTopOf="@id/tilPhone"
         app:layout_constraintTop_toBottomOf="@+id/tilUsername">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -130,10 +126,10 @@
         android:layout_height="wrap_content"
         android:hint="@string/phone_number_req"
         app:endIconDrawable="@drawable/icon_phone"
+        app:layout_constraintBottom_toTopOf="@id/tilEmail"
         app:layout_constraintEnd_toStartOf="@id/contentGuidelineEnd"
         app:layout_constraintStart_toEndOf="@id/contentGuidelineStart"
-        app:layout_constraintTop_toBottomOf="@+id/tilBirthday"
-        app:layout_constraintBottom_toTopOf="@id/tilEmail">
+        app:layout_constraintTop_toBottomOf="@+id/tilBirthday">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etPhone"
@@ -150,10 +146,10 @@
         android:layout_height="wrap_content"
         android:hint="@string/email_req"
         app:endIconDrawable="@drawable/icon_mail"
+        app:layout_constraintBottom_toTopOf="@id/tilPassword"
         app:layout_constraintEnd_toStartOf="@id/contentGuidelineEnd"
         app:layout_constraintStart_toEndOf="@id/contentGuidelineStart"
-        app:layout_constraintTop_toBottomOf="@+id/tilPhone"
-        app:layout_constraintBottom_toTopOf="@id/tilPassword">
+        app:layout_constraintTop_toBottomOf="@+id/tilPhone">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etEmail"
@@ -170,10 +166,10 @@
         android:layout_height="wrap_content"
         android:hint="@string/password_req"
         app:endIconDrawable="@drawable/selector_show_password"
+        app:layout_constraintBottom_toTopOf="@id/tilConfirmPassword"
         app:layout_constraintEnd_toStartOf="@id/contentGuidelineEnd"
         app:layout_constraintStart_toEndOf="@id/contentGuidelineStart"
-        app:layout_constraintTop_toBottomOf="@+id/tilEmail"
-        app:layout_constraintBottom_toTopOf="@id/tilConfirmPassword">
+        app:layout_constraintTop_toBottomOf="@+id/tilEmail">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etPassword"
@@ -206,7 +202,6 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnAct"
-        app:layout_constraintVertical_bias="0.3"
         style="@style/Theme.AntGallery.Button.Primary"
         android:layout_width="164dp"
         android:layout_height="wrap_content"
@@ -215,31 +210,31 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilConfirmPassword"
+        app:layout_constraintVertical_bias="0.3"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnChangeMode"
+        style="@style/Theme.AntGallery.Button.Tertiary"
         android:layout_width="164dp"
         android:layout_height="wrap_content"
-        style="@style/Theme.AntGallery.Button.Tertiary"
         android:text="@string/sign_in"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnAct"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnAct" />
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrierEditTexts"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:barrierDirection="top"
-        app:constraint_referenced_ids="tilUsername, tilBirthday, tilPhone, tilEmail, tilPassword, tilConfirmPassword"
-        />
+        app:constraint_referenced_ids="tilUsername, tilBirthday, tilPhone, tilEmail, tilPassword, tilConfirmPassword" />
+
     <androidx.constraintlayout.widget.Group
         android:id="@+id/groupRegistrationFields"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="tilUsername, tilBirthday, tilPhone, tilConfirmPassword"
-        />
+        app:constraint_referenced_ids="tilUsername, tilBirthday, tilPhone, tilConfirmPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

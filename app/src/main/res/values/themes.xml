@@ -52,6 +52,17 @@
         <item name="android:textSize">20sp</item>
     </style>
 
+    <style name="Theme.AntGallery.Text.Label" parent="Widget.MaterialComponents.TextView">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Theme.AntGallery.Text.Label.Description" parent="Theme.AntGallery.Text.Label">
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
     <style name="Theme.AntGallery.Text.ToolbarTip" parent="Widget.MaterialComponents.TextView">
         <item name="android:textColor">@color/blue</item>
         <item name="android:layout_marginHorizontal">8dp</item>
@@ -82,6 +93,13 @@
 
     <style name="Theme.AntGallery.Text.Editable.EditText" parent="ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
         <item name="android:padding">12dp</item>
+    </style>
+
+    <!-- Cards -->
+    <style name="Theme.AntGallery.Card" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">10dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="android:padding">0dp</item>
     </style>
 
     <!-- Buttons -->
@@ -143,6 +161,8 @@
         <item name="colorControlActivated">@color/black</item>
     </style>
 
+    <!-- TabLayout -->
+
     <style name="Theme.AntGallery.TabLayout" parent="Widget.MaterialComponents.TabLayout">
         <item name="tabIndicatorFullWidth">true</item>
         <item name="tabTextColor">@color/gray</item>
@@ -151,5 +171,15 @@
         <item name="tabRippleColor">@android:color/transparent</item>
         <item name="tabBackground">@drawable/background_tab</item>
         <item name="tabTextAppearance">@style/Theme.AntGallery.Text.TabHeader</item>
+    </style>
+
+    <!-- Progress -->
+
+    <style name="Theme.AntGallery.Progressbar" parent="Widget.MaterialComponents.CircularProgressIndicator">
+        <item name="indicatorColor">@color/gray</item>
+        <item name="trackColor">@android:color/transparent</item>
+        <item name="android:indeterminate">true</item>
+        <item name="trackThickness">1dp</item>
+        <item name="indicatorInset">0dp</item>
     </style>
 </resources>

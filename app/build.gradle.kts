@@ -70,6 +70,8 @@ dependencies {
     implementation("androidx.room:room-ktx:$roomVersion")
     kapt("androidx.room:room-compiler:$roomVersion")
 
+    implementation("io.coil-kt:coil:2.5.0")
+
     implementation("javax.inject:javax.inject:1")
 
     testImplementation("junit:junit:4.13.2")
