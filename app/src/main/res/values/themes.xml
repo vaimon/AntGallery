@@ -49,7 +49,7 @@
     <style name="Theme.AntGallery.Text.TabHeader" parent="Widget.MaterialComponents.TextView">
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:textColor">?attr/colorTertiary</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">18sp</item>
     </style>
 
     <style name="Theme.AntGallery.Text.Label" parent="Widget.MaterialComponents.TextView">

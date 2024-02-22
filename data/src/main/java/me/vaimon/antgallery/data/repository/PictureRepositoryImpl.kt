@@ -11,10 +11,14 @@ class PictureRepositoryImpl(
     private val assetDataSource: AssetDataSource,
     private val pictureMapper: Mapper<PictureEntity, PictureData>
 ): PictureRepository {
-    override suspend fun getPictures(): List<PictureEntity> {
-//        delay(2000L)
+    override suspend fun getNewPictures(): List<PictureEntity> {
         return assetDataSource.getDummiePictures().map {
             pictureMapper.from(it)
         }
+    }
+
+    override suspend fun getPopularPictures(): List<PictureEntity> {
+        delay(1000L)
+        return emptyList()
     }
 }

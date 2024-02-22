@@ -1,4 +1,4 @@
-package me.vaimon.antgallery.ui.home.nested_ui.picture_viewer.fragments
+package me.vaimon.antgallery.ui.home.nested_ui.picture_viewer.viewpager_fragments
 
 import me.vaimon.antgallery.models.Picture
 import moxy.MvpView

@@ -4,10 +4,10 @@ import me.vaimon.antgallery.domain.entity.PictureEntity
 import me.vaimon.antgallery.domain.repository.PictureRepository
 import javax.inject.Inject
 
-class GetNewPicturesUseCase @Inject constructor(
+class GetPopularPicturesUseCase @Inject constructor(
     private val pictureRepository: PictureRepository
 ){
     suspend operator fun invoke(): List<PictureEntity>{
-        return pictureRepository.getNewPictures()
+        return pictureRepository.getPopularPictures()
     }
 }
