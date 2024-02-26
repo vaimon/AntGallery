@@ -3,8 +3,6 @@ package me.vaimon.antgallery.data.datasource
 import android.content.Context
 import androidx.core.content.edit
 import dagger.hilt.android.qualifiers.ApplicationContext
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class SharedPreferencesDataSource @Inject constructor(
@@ -26,7 +24,7 @@ class SharedPreferencesDataSource @Inject constructor(
         putInt(loggedUserIdKey, userId)
     }
 
-    fun clearUserId() = sharedPrefs.edit {
+    fun clearLoggedUserId() = sharedPrefs.edit {
         remove(loggedUserIdKey)
     }
 }

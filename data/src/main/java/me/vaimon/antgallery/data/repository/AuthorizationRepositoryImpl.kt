@@ -34,5 +34,9 @@ class AuthorizationRepositoryImpl @Inject constructor(
         return user.id
     }
 
+    override fun signOut() {
+        sharedPrefsDataSource.clearLoggedUserId()
+    }
+
     override fun getLoggedUserId(): Int? = sharedPrefsDataSource.getLoggedUserId()
 }

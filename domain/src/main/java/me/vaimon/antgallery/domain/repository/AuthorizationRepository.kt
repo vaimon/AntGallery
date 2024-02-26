@@ -6,5 +6,6 @@ import me.vaimon.antgallery.domain.entity.UserEntity
 interface AuthorizationRepository {
     suspend fun signUp(user: UserEntity)
     suspend fun signIn(credentials: LoginCredentialsEntity): Int
+    fun signOut()
     fun getLoggedUserId(): Int?
 }
