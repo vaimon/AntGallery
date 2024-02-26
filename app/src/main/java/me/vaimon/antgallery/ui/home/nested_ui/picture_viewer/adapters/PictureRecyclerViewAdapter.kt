@@ -17,7 +17,7 @@ class PictureRecyclerViewAdapter(
 
     private val onClickListener = View.OnClickListener {
         val item = it.tag as Picture
-        onItemClickListener?.onCharacterClick(item)
+        onItemClickListener?.onPictureClick(item)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -48,7 +48,7 @@ class PictureRecyclerViewAdapter(
     override fun getItemCount(): Int = pictures.size
 
     fun replaceWithNewPictures(newPictureList: List<Picture>) {
-        val listDiff = DiffUtil.calculateDiff(CharactersDiffUtil(pictures, newPictureList))
+        val listDiff = DiffUtil.calculateDiff(PictureDiffUtil(pictures, newPictureList))
         pictures.clear()
         pictures.addAll(newPictureList)
         listDiff.dispatchUpdatesTo(this)
@@ -58,10 +58,10 @@ class PictureRecyclerViewAdapter(
         RecyclerView.ViewHolder(binding.root)
 
     interface OnItemClickListener {
-        fun onCharacterClick(character: Picture)
+        fun onPictureClick(item: Picture)
     }
 
-    class CharactersDiffUtil(
+    class PictureDiffUtil(
         private val oldList: List<Picture>,
         private val newList: List<Picture>,
     ) : DiffUtil.Callback() {
